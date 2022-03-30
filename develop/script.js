@@ -7,7 +7,7 @@ var passwordcriteria = {
    Number: ["0123456789"],
    specialchara: ["!@#$%^&*()=+"],
    length: ["0"],
-
+}
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -16,10 +16,11 @@ function writePassword() {
   passwordText.value = password;
 
 }
-function generataPassword() {
+
+function generatePassword() {
   console.log("clicked the button");
   
-  var length = ;
+  var length = 0;
   var Uppercase;
   var lowercase;
   var Number;
@@ -30,8 +31,7 @@ function generataPassword() {
   if((length < 8 || length >128))
   alert("Choose number between 8 and 128")
 
-
-
+return "passwordgenerate"
+}
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
-
