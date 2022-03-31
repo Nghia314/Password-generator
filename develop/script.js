@@ -1,13 +1,74 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-// creating password criteria 
-var passwordcriteria = {
-   Uppercase: ["ABCDFGHJIKMNLOPQRSTUVWXYZ"],
-   lowercase: ["abcdefghiklmnopqrstuvwxyz"],
-   Number: ["0123456789"],
-   specialchara: ["!@#$%^&*()=+"],
-   length: ["0"],
+//password criteria
+var pwcriteria = {
+  pwlowercase: ["abcdfghijklmnopqrstuvwxyz"],
+  pwuppercase: ["ABCDEFGHIJKLMOPQRSTUVWXYZ"],
+  pwnumber: ["0123456789"],
+  pwspecial: ["!@#$%^&*()=+"]
 }
+// ask the user how long they want the password
+function generatePassword() {
+  var pwlength = prompt ("How long do you want the password to be? (at least 8 and max 128)");
+  //if user return undefine password length
+  if (pwlength < 8 || pw > 128) {
+    alert("Please enter the length between 8 and 128 chareacter Please!");
+    return generatePassword();
+  }
+  //if the user meet the length requirement
+  if (pwlength > 8 || pw < 128) {
+    // password criteria confirm
+    var pwlowercase = confirm("would you like lowercase to be in your password?");
+    var pwuppercase = confirm("would you like Uppercase to be in your password?");
+    var pwnumber = confirm("would you like number to be in your password?");
+    var pwspecial = confirm("would you like specical character to be in your password?");
+
+    // at least one criteria select
+    var minimumselect = 1;
+  } 
+
+  //if the user doesnt select any criteria requirement
+  if (pwlowercase ===false && pwuppercase ===false && pwnumber ===false && pwspecial ===false) {
+    alert("please confirm at least one set of criteria!!");
+    return generatePassword();
+  }
+  //if function return to select criteria
+  if (pwlowercase ===false) {
+    var pwlowercase = [""];
+  }
+  else {
+     if(pwlowercase ===true) {
+    var pwlowercase = ["abcdfghijklmnopqrstuvwxyz"];
+     }
+  }
+  if (pwuppercase ===false) {
+    var pwuppercase = [""];
+  }
+  else {
+     if(pwuppercase ===true) {
+    var pwuppercase = ["ABCDEFGHIJKLMOPQRSTUVWXYZ"];
+     }
+  }
+  if (pwnumber ===false) {
+    var pwnumber = [""];
+  }
+  else {
+     if(pwnumber ===true) {
+    var pwnumber = ["0123456789"];
+     }
+  }
+  if (pwspecial ===false) {
+    var pwspecial = [""];
+  }
+  else {
+     if(pwspecial ===true) {
+    var pwspecial = ["!@#$%^&*()=+"];
+     }
+  }
+
+}
+
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -19,41 +80,5 @@ function writePassword() {
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+
 //function the generate button to generate password
-function generatePassword() {
-  //
-  var result ="";
-
-  var length = 0;
-  var Uppercase;
-  var lowercase;
-  var Number;
-  var specialchara;
-
-  length = 0;
-  passwordcriteria.length= 0;
-  result="";
-
-  while (length < 8 || length > 128) {
-    length = prompt("How many characters do you want to be in your password? at least 8 and no more than 128.");
-
-    if (length == null){
-      return "your secure password";
-    }
-    else {
-    if (undefined(length)) {
-      alert ("you did not enter a number");
-      return "No Password was generate"
-    }
-    }
-    else {
-      if ( length < 8 || length > 128){
-        alert("password must be between 8 and 128 character.");
-        return "Your secure password";
-      }
-    }
-    else{
-      
-    }
-  }
-}
