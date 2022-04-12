@@ -1,5 +1,6 @@
 # Password Generator Project
-Deployed link -
+Deployed link - https://nghia314.github.io/Password-generator/
+<img width="1440" alt="Screen Shot 2022-04-11 at 8 40 02 PM" src="https://user-images.githubusercontent.com/100381618/162877149-4d3cd964-cdf1-4c9b-8d7f-dc62e2144269.png">
 
 ## Descripttion
 - Password generator website is a simple generate that applied to user selecting on criteria preferences to generate a random password. To use the site efficiently user need to enter between 8 to 128 characters and select the criteria the want their password to have, which is Uppercase, Lowercase, number, Special character.
